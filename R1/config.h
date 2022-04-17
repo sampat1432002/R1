@@ -197,3 +197,46 @@ void setVelocity(float speed) {
   else
     CCIM.antiClockwise(output);
 }
+
+
+void LagoriBrake() {
+  angleM1 = 4300, angleM2 = 7500, Cspeed = 100;
+  controlCIM();
+  delay(2000);
+  CLoad.antiClockwise(100);
+  delay(300);
+  CLoad.brake();
+  delay(2000);
+  CLoad.antiClockwise(100);
+  delay(300);
+  CLoad.brake();
+  delay(2000);
+  CLoad.antiClockwise(100);
+  delay(300);
+  CLoad.brake();
+  delay(500);
+  controlCIM();
+}
+
+void BOHBrake() {
+  angleM1 = 4400, angleM2 = 6610, Cspeed = 100;
+  setEncoderM1(angleM1);
+  setEncoderM2(angleM2);
+  delay(5000);
+  controlCIM();
+  delay(2000);
+  CLoad.antiClockwise(100);
+  delay(300);
+  CLoad.brake();
+  delay(10000);
+  angleM1 = 8550, angleM2 = 6860, Cspeed = 90;
+  CCIM.antiClockwise(Cspeed);
+  setEncoderM1(angleM1);
+  setEncoderM2(angleM2);
+  delay(2000);
+  CLoad.antiClockwise(100);
+  delay(300);
+  CLoad.brake();
+  delay(2000);
+  controlCIM();
+}
